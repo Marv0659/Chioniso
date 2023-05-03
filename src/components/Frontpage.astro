@@ -1,0 +1,181 @@
+<section class="front-page">
+  <img class="hero" src="src/imgs/placeholderring.webp" alt="dddd" />
+  <nav>
+    <div class="logo">
+      <img src="https://loremflickr.com/640/360" alt="dddd" />
+    </div>
+    <div class="logo">
+      <h1>PETREA.STUDIO</h1>
+    </div>
+    <div class="links">
+      <a href="#">our story</a>
+      <a href="#">our products</a>
+      <a href="#">classes</a>
+      <a href="#">classes</a>
+      <a href="#">classes</a>
+    </div>
+    <svg width="44" height="18" viewBox="0 0 44 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line class="line" y1="1" x2="44" y2="1" stroke="white" stroke-width="2"></line>
+      <line class="line" y1="9" x2="27" y2="9" stroke="white" stroke-width="2"></line>
+      <line class="line" y1="17" x2="11" y2="17" stroke="white" stroke-width="2"></line>
+    </svg>
+  </nav>
+  <div class="selling-point">
+    <h2>The perfect unperfect.</h2>
+    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt?</h3>
+    <div class="ctas">
+      <button class="cta-main">
+        <a href="#">Our products</a>
+      </button>
+      <button class="cta-main">
+        <a href="#">About us</a>
+      </button>
+    </div>
+  </div>
+</section>
+<!-- SECTION FOR OVERORDNET CSS -->
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&display=swap");
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: "M PLUS 1 Code", sans-serif;
+    overflow-x: hidden;
+  }
+
+  :root {
+    --main-color: #ebebeb;
+    --main-color-opacity: #ebebeb50;
+    --secondary-color: #1b1b1b;
+  }
+
+  section {
+    padding: 5%;
+  }
+
+  h2 {
+    font-family: "M PLUS 1 Code", sans-serif;
+    font-size: 2.5rem;
+    line-height: 125%;
+    padding: 1rem 0rem;
+  }
+  h3 {
+    font-family: "M PLUS 1 Code", sans-serif;
+    font-size: 1.25rem;
+    line-height: 125%;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav svg {
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .links {
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transform: translateX(100%);
+  }
+  .links a {
+    color: var(--secondary-color);
+    font-size: 2rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo h1 {
+    margin-left: 0.5rem;
+    font-size: 4rem;
+    font-family: "M PLUS 1 Code", sans-serif;
+  }
+
+  .logo img {
+    width: 4rem;
+  }
+
+  .front-page {
+    min-height: 100vh;
+    color: white;
+  }
+  .selling-point {
+    margin-top: 25vh;
+    font-family: "M PLUS 1 Code", sans-serif;
+    text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.49);
+    text-align: center;
+  }
+  .selling-point h3 {
+    font-family: sans-serif;
+    text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.49);
+  }
+  .ctas {
+    margin-top: 2rem;
+  }
+  .ctas button {
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.216);
+    margin: 1rem;
+  }
+  .cta-main {
+    background-color: var(--main-color-opacity);
+    color: var(--secondary-color);
+  }
+  .cta-main a {
+    text-decoration: none;
+    color: var(--secondary-color);
+  }
+
+  .hero {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  @media screen and (min-width: 768px) {
+    body {
+      padding: 0% 10%;
+    }
+  }
+</style>
+<script>
+  const burger = document.querySelector("nav svg");
+
+  burger.addEventListener("click", () => {
+    if (burger.classList.contains("active")) {
+      gsap.to(".links", { x: "100%" });
+      gsap.to(".line", { stroke: "white" });
+      gsap.set("body", { overflow: "auto" });
+      gsap.set("body", { overflowX: "hidden" });
+    } else {
+      gsap.to(".links", { x: "0%" });
+      gsap.to(".line", { stroke: "black" });
+      gsap.fromTo(".links a", { opacity: 0, y: 0 }, { opacity: 1, y: 20, delay: 0.25, stagger: 0.25 });
+      gsap.set("body", { overflow: "hidden" });
+    }
+    burger.classList.toggle("active");
+  });
+</script>

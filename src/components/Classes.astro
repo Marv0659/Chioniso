@@ -1,0 +1,113 @@
+<section class="classes">
+  <div class="classes-description">
+    <h2>Overskrift her</h2>
+    <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+  </div>
+  <div class="videos">
+    <div class="pilates">
+      <h3>PRODUKT 1</h3>
+      <video muted loop class="video" src="src/imgs/placeholder.mp4"></video>
+    </div>
+    <div class="yoga">
+      <h3>PRODUKT 2</h3>
+      <video muted loop class="video" src="src/imgs/placeholder.mp4"></video>
+    </div>
+    <div class="meditation">
+      <h3>PRODUKT 3</h3>
+      <video muted loop class="video" src="src/imgs/placeholder.mp4"></video>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: "M PLUS 1 Code", sans-serif;
+    overflow-x: hidden;
+  }
+
+  :root {
+    --main-color: #ebebeb;
+    --secondary-color: #1b1b1b;
+  }
+
+  section {
+    padding: 5%;
+  }
+
+  h2 {
+    font-family: "M PLUS 1 Code", sans-serif;
+    font-size: 2.5rem;
+    line-height: 125%;
+    padding: 1rem 0rem;
+  }
+  h3 {
+    font-family: "M PLUS 1 Code", sans-serif;
+    font-size: 1.25rem;
+    line-height: 125%;
+  }
+
+  .classes {
+    color: var(--secondary-color);
+    text-align: center;
+    font-family: "argonite", sans-serif;
+  }
+  .videos video {
+    width: 100%;
+
+    margin-top: 1rem;
+  }
+  .meditation,
+  .yoga,
+  .pilates {
+    position: relative;
+  }
+  .videos h3 {
+    position: absolute;
+    color: var(--main-color);
+    text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.408);
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    font-size: 2rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    body {
+      padding: 0% 10%;
+    }
+    .videos {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" integrity="sha512-Mf/xUqfWvDIr+1B6zfnIDIiG7XHzyP/guXUWgV6PgaQoIFeXkJQR5XWh9fqAiCiRCpemabt3naV4jhDWVnuYDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js" integrity="sha512-YzMW3OzvgtVpIIPPpjnCy8wVTq5slHRrxnLH1oD5dkVjZf8+8DJYd+GYmmWXZNmroTqKXFFzFS3XZ/LBvaNgZg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  const videos = gsap.utils.toArray(".video");
+  gsap.set(videos, { opacity: 0 });
+
+  videos.forEach((video) => {
+    ScrollTrigger.create({
+      trigger: video,
+      start: "top center",
+      end: "bottom center",
+
+      onEnter: () => {
+        gsap.to(video, { opacity: 1 });
+        video.play();
+      },
+      onEnterBack: () => video.play(),
+      onLeave: () => video.pause(),
+      onLeaveBack: () => video.pause(),
+    });
+  });
+</script>

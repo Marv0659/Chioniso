@@ -1,0 +1,62 @@
+<section class="about">
+  <div class="our-story">
+    <h2>Our story...</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam sapiente, ut nostrum vel dolorem vero. Facilis aperiam iure consequuntur sit harum saepe aliquam, sed officia eligendi, eius corporis. Distinctio sit maiores, reprehenderit suscipit ut quos incidunt ullam mollitia in! Reprehenderit error vitae exercitationem est laudantium ipsum quam pariatur doloremque officia.</p>
+  </div>
+  <img src="https://loremflickr.com/640/360" alt="dddd" />
+</section>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: "M PLUS 1 Code", sans-serif;
+    overflow-x: hidden;
+  }
+
+  :root {
+    --main-color: #ebebeb;
+    --secondary-color: #1b1b1b;
+  }
+
+  section {
+    padding: 5%;
+  }
+  .about {
+    color: var(--secondary-color);
+  }
+  .about h2 {
+    font-family: "M PLUS 1 Code", sans-serif;
+    text-align: center;
+  }
+  .about p {
+    line-height: 150%;
+    font-size: 1.2rem;
+  }
+  .about img {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  @media screen and (min-width: 768px) {
+    body {
+      padding: 0% 10%;
+
+      .about {
+        display: flex;
+        gap: 5rem;
+        justify-content: space-between;
+      }
+      .about img {
+        width: 50%;
+      }
+      .about h2 {
+        text-align: start;
+      }
+    }
+  }
+</style>
