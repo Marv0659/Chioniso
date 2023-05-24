@@ -1,0 +1,17 @@
+---
+import Produktkort from "./Produktkort.astro";
+const {categories} = Astro.props;
+---
+
+
+<h2>test</h2>
+
+
+
+<div class="mainGrid">
+  {categories.map((program) => 
+  <Produktkort
+  navn={program.navn} 
+  beskrivelse={program.beskrivelse} 
+  pris={program.pris} 
+  />)}
