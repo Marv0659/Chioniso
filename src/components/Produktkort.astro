@@ -1,14 +1,27 @@
 ---
-const {navn, beskrivelse, pris, specifikation, dimensioner, categories} = Astro.props;
+const { navn, beskrivelse, pris, specifikation, dimensioner, category } = Astro.props;
 ---
 
-
 <div class="container">
-    <h2>{navn}</h2>
-    <p class="text">{beskrivelse}</p>
-    <p class="text">{pris}kr</p>
-    <p class="text">{specifikation}</p>
-    <p class="text">{dimensioner}</p>
-  </div>
+  <h2>{navn}</h2>
+  <p class="text">{beskrivelse}</p>
+  <p class="text">{pris}kr</p>
+  <p class="text">{specifikation}</p>
+  <p class="text">{dimensioner}</p>
+  <p class="text">{category}</p>
+</div>
+
 <!-- <a class="selectProgram" href={link}><span>Read More</span> </a> -->
-</article>
+
+<style>
+  section {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    border: solid;
+  }
+
+  .wrapper {
+    border: solid;
+    width: 10rem;
+  }
+</style>
