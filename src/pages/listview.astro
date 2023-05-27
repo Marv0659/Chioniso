@@ -2,6 +2,7 @@
 import Card from "../components/Card.astro";
 import Categories from "../components/Categories.astro";
 import Dots from "../components/Dots.astro";
+import Footer from "../components/Footer.astro";
 import Frontpage from "../components/Frontpage.astro";
 import Nav from "../components/Nav.astro";
 import Produktkort from "../components/Produktkort.astro";
@@ -33,56 +34,38 @@ const armbånd = data.filter((produkt) => produkt.category == "Armbånd");
   </head>
   <body>
     <Frontpage />
-    <Nav/>
-    <Categories categoryTxt="Halskæde" data={halskæder}/>
-
-    
+    <Nav />
+    <Categories categoryTxt="Halskæde" data={halskæder} />
 
     <div class="container">
-      {data.map((produkt) => 
-      <Produktkort data={halskæder} categoryTxt="Halskæde" navn={produkt.navn} category={produkt.category}
-       beskrivelse={produkt.beskrivelse} link={"/underside/" + produkt.slug}  specifikation={produkt.specifikation} pris={produkt.pris}
-       billede={`/billeder/${produkt.billede}`}
-        />)}
+      {data.map((produkt) => <Produktkort data={halskæder} categoryTxt="Halskæde" navn={produkt.navn} category={produkt.category} beskrivelse={produkt.beskrivelse} link={"/underside/" + produkt.slug} specifikation={produkt.specifikation} pris={produkt.pris} billede={`/billeder/${produkt.billede}`} />)}
     </div>
-    <Dots/>
+    <Dots />
 
-    
-
-    <Categories categoryTxt="Rings" data={øreringe}/>
+    <Categories categoryTxt="Rings" data={øreringe} />
 
     <div class="container">
-      {data.map((produkt) => 
-      <Produktkort categoryTxt="Rings" data={øreringe} navn={produkt.navn}
-       beskrivelse={produkt.beskrivelse} link={"/underside/" + produkt.slug} specifikation={produkt.specifikation} pris={produkt.pris}
-       billede={`/billeder/${produkt.billede}`}
-        />)}
+      {data.map((produkt) => <Produktkort categoryTxt="Rings" data={øreringe} navn={produkt.navn} beskrivelse={produkt.beskrivelse} link={"/underside/" + produkt.slug} specifikation={produkt.specifikation} pris={produkt.pris} billede={`/billeder/${produkt.billede}`} />)}
     </div>
-    <Dots/>
+    <Dots />
 
-    <Categories categoryTxt="Armbånd" data={armbånd}/>
+    <Categories categoryTxt="Armbånd" data={armbånd} />
 
     <div class="container">
-      {data.map((produkt) => 
-      <Produktkort categoryTxt="Armbånd" navn={produkt.navn}
-       beskrivelse={produkt.beskrivelse} link={"/underside/" + produkt.slug} specifikation={produkt.specifikation} pris={produkt.pris}
-       billede={`/billeder/${produkt.billede}`}
-        />)}
+      {data.map((produkt) => <Produktkort categoryTxt="Armbånd" navn={produkt.navn} beskrivelse={produkt.beskrivelse} link={"/underside/" + produkt.slug} specifikation={produkt.specifikation} pris={produkt.pris} billede={`/billeder/${produkt.billede}`} />)}
     </div>
-    <Dots/>
+    <Dots />
 
-    <Categories/>
+    <Categories />
 
     <div class="container">
-      {data.map((produkt) => 
-      <Produktkort navn={produkt.navn}
-       beskrivelse={produkt.beskrivelse} link={"/underside/" + produkt.slug} specifikation={produkt.specifikation} pris={produkt.pris}
-       billede={`/billeder/${produkt.billede}`}
-        />)}
+      {data.map((produkt) => <Produktkort navn={produkt.navn} beskrivelse={produkt.beskrivelse} link={"/underside/" + produkt.slug} specifikation={produkt.specifikation} pris={produkt.pris} billede={`/billeder/${produkt.billede}`} />)}
     </div>
-    <Dots/>
+    <Dots />
 
     <!-- <Debug {data} /> -->
+
+    <Footer />
   </body>
 </html>
 

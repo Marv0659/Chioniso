@@ -2,7 +2,9 @@
 const { title } = Astro.props;
 import About from "../components/About.astro";
 import Classes from "../components/Classes.astro";
+import Footer from "../components/Footer.astro";
 import Frontpage from "../components/Frontpage.astro";
+import Frontpagetext from "../components/Frontpagetext.astro";
 import Tradition from "../components/Tradition.astro";
 ---
 
@@ -16,8 +18,10 @@ import Tradition from "../components/Tradition.astro";
   </head>
   <body>
     <Frontpage />
-    <Classes /><About />
-    <Tradition/>
-    
+    <Classes />
+    <Tradition />
+    <Frontpagetext />
+    <About />
+    <Footer />
   </body>
 </html>
