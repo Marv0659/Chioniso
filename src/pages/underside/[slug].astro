@@ -2,6 +2,8 @@
 import { Debug } from "astro/components";
 import Button from "../../components/Button.astro";
 import Frontpage from "../../components/Frontpage.astro";
+import Footer from "../../components/Footer.astro";
+import Nav from "../../components/Nav.astro";
 export async function getStaticPaths() {
     const URL = "https://ekdwifpkwxudrklhraxd.supabase.co/rest/v1/Produkter";
 
@@ -26,9 +28,7 @@ const {produkt} = Astro.props;
 
 ---
 
-
-
-
+<Nav/>
 
 <section class="slugGrid">
   <div class="textLeft">
@@ -43,6 +43,10 @@ const {produkt} = Astro.props;
   </div>
   
 </section>
+
+
+
+<Footer/>
 
 
 
