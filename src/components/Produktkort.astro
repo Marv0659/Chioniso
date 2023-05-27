@@ -1,27 +1,44 @@
 ---
-const { navn, beskrivelse, pris, specifikation, dimensioner, category } = Astro.props;
+const { navn,billede,data,link, category,categorier, beskrivelse, pris, specifikation, dimensioner, categoryTxt } = Astro.props;
 ---
 
+
+
 <div class="container">
+  <img src={billede} alt="">
   <h2>{navn}</h2>
-  <p class="text">{beskrivelse}</p>
+  <p class="text">{category}</p>
+  <a href={link}>Read More!</a>
+  
+  
+  <!-- <p class="text">{beskrivelse}</p>
   <p class="text">{pris}kr</p>
   <p class="text">{specifikation}</p>
   <p class="text">{dimensioner}</p>
-  <p class="text">{category}</p>
+  <p class="text">{category}</p> -->
 </div>
+
+
 
 <!-- <a class="selectProgram" href={link}><span>Read More</span> </a> -->
 
 <style>
   section {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     border: solid;
   }
 
   .wrapper {
     border: solid;
-    width: 10rem;
+    width: 5rem;
+  }
+
+  img{
+    width: 50%;
+  }
+
+  video{
+    width: 50%;
   }
 </style>

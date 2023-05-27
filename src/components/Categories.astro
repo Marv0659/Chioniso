@@ -1,0 +1,40 @@
+---
+const {categoryTxt} = Astro.props;
+---
+
+<hr>
+<section class="halskæder">
+    <div>
+      <h1>{categoryTxt}</h1>
+      <a href=""><h3>View all <i class="fa-solid fa-arrow-right"></i> </h3></a>
+      
+      
+    </div>
+    <div class="halskædeTekst">tekst tekst tekst tekst</div>
+  </section>
+
+  
+
+
+  <style>
+    .halskæder{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .halskædeTekst{
+      display: grid;
+      text-align: center;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+
+    h1{
+      font-size: 2rem;
+    }
+  </style>
+
+
+<script src="https://kit.fontawesome.com/f1ba43c5c7.js" crossorigin="anonymous"></script>

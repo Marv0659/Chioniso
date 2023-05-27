@@ -1,0 +1,74 @@
+---
+import { Debug } from "astro/components";
+import Button from "../../components/Button.astro";
+import Frontpage from "../../components/Frontpage.astro";
+export async function getStaticPaths() {
+    const URL = "https://ekdwifpkwxudrklhraxd.supabase.co/rest/v1/Produkter";
+
+const options = {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrZHdpZnBrd3h1ZHJrbGhyYXhkIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ4MzY5ODMsImV4cCI6MjAwMDQxMjk4M30.xddP6o77EO_m5cTEC1MtG2_Aq8cdco1t9dvJfoau6rk",
+  },
+};
+
+  const response = await fetch(URL, options);
+  const data = await response.json();
+
+  return data.map((produkt) => {
+    return {
+      params: { slug: produkt.slug },
+      props: { produkt },
+    };
+  });
+}
+
+const {produkt} = Astro.props;
+
+---
+
+
+
+
+
+<section class="slugGrid">
+  <div class="textLeft">
+    <img src={`/billeder/${produkt.billede}`} alt="event Billede" />
+    
+  </div>
+  <div class="rightSide">
+    <h1>{produkt.navn}</h1>
+    <h2>{produkt.pris} kr</h2>
+    <h3>{produkt.beskrivelse}</h3>
+    <Button/> 
+  </div>
+  
+</section>
+
+
+
+
+<style>
+    .slugGrid{
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        
+    }
+
+    .textLeft{
+        border: solid;
+        display: flex;
+        justify-content: right;
+        width: 40rem;
+    }
+
+    img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+    .rightSide{
+        width: 20%;
+    }
+</style>

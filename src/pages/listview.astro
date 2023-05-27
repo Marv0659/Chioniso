@@ -1,6 +1,9 @@
 ---
 import Card from "../components/Card.astro";
+import Categories from "../components/Categories.astro";
+import Dots from "../components/Dots.astro";
 import Frontpage from "../components/Frontpage.astro";
+import Nav from "../components/Nav.astro";
 import Produktkort from "../components/Produktkort.astro";
 import { Debug } from "astro/components";
 
@@ -15,6 +18,9 @@ const options = {
 const response = await fetch(URL, options);
 console.log("test");
 const data = await response.json();
+const halskæder = data.filter((produkt) => produkt.category == "Halskæde");
+const øreringe = data.filter((produkt) => produkt.category == "Rings");
+const armbånd = data.filter((produkt) => produkt.category == "Armbånd");
 ---
 
 <html lang="en">
@@ -27,9 +33,54 @@ const data = await response.json();
   </head>
   <body>
     <Frontpage />
+    <Nav/>
+    <Categories categoryTxt="Halskæde" data={halskæder}/>
+
+    
+
     <div class="container">
-      {data.map((produkt) => <Produktkort navn={produkt.navn} beskrivelse={produkt.beskrivelse} specifikation={produkt.specifikation} pris={produkt.pris} />)}
+      {data.map((produkt) => 
+      <Produktkort data={halskæder} categoryTxt="Halskæde" navn={produkt.navn} category={produkt.category}
+       beskrivelse={produkt.beskrivelse} link={"/underside/" + produkt.slug}  specifikation={produkt.specifikation} pris={produkt.pris}
+       billede={`/billeder/${produkt.billede}`}
+        />)}
     </div>
+    <Dots/>
+
+    
+
+    <Categories categoryTxt="Rings" data={øreringe}/>
+
+    <div class="container">
+      {data.map((produkt) => 
+      <Produktkort categoryTxt="Rings" data={øreringe} navn={produkt.navn}
+       beskrivelse={produkt.beskrivelse} link={"/underside/" + produkt.slug} specifikation={produkt.specifikation} pris={produkt.pris}
+       billede={`/billeder/${produkt.billede}`}
+        />)}
+    </div>
+    <Dots/>
+
+    <Categories categoryTxt="Armbånd" data={armbånd}/>
+
+    <div class="container">
+      {data.map((produkt) => 
+      <Produktkort categoryTxt="Armbånd" navn={produkt.navn}
+       beskrivelse={produkt.beskrivelse} link={"/underside/" + produkt.slug} specifikation={produkt.specifikation} pris={produkt.pris}
+       billede={`/billeder/${produkt.billede}`}
+        />)}
+    </div>
+    <Dots/>
+
+    <Categories/>
+
+    <div class="container">
+      {data.map((produkt) => 
+      <Produktkort navn={produkt.navn}
+       beskrivelse={produkt.beskrivelse} link={"/underside/" + produkt.slug} specifikation={produkt.specifikation} pris={produkt.pris}
+       billede={`/billeder/${produkt.billede}`}
+        />)}
+    </div>
+    <Dots/>
 
     <!-- <Debug {data} /> -->
   </body>
@@ -38,6 +89,8 @@ const data = await response.json();
 <style>
   .container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    text-align: center;
   }
 </style>
