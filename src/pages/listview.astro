@@ -5,6 +5,7 @@ import Dots from "../components/Dots.astro";
 import Footer from "../components/Footer.astro";
 import Frontpage from "../components/Frontpage.astro";
 import Nav from "../components/Nav.astro";
+import Navheader from "../components/Navheader.astro";
 import Produktkort from "../components/Produktkort.astro";
 import { Debug } from "astro/components";
 
@@ -33,7 +34,7 @@ const armbånd = data.filter((produkt) => produkt.category == "Armbånd");
     <title>Astro</title>
   </head>
   <body>
-    <Frontpage />
+    <Navheader />
     <Nav />
     <Categories categoryTxt="Halskæde" data={halskæder} />
 
