@@ -5,6 +5,7 @@ import Frontpage from "../../components/Frontpage.astro";
 import Footer from "../../components/Footer.astro";
 import Nav from "../../components/Nav.astro";
 import Accordion from "../../components/Accordion.astro";
+import Navheader from "../../components/Navheader.astro";
 export async function getStaticPaths() {
     const URL = "https://ekdwifpkwxudrklhraxd.supabase.co/rest/v1/Produkter";
 
@@ -29,9 +30,7 @@ const {produkt} = Astro.props;
 
 ---
 
-<div class="logo">
-  <a href="/"><h1>chi<span>o</span>niso</h1></a>
-</div>
+<Navheader/>
 
 
 

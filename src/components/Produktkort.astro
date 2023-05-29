@@ -5,10 +5,11 @@ const { navn,billede,data,link, category,categorier, beskrivelse, pris, specifik
 
 
 <div class="container">
+  <a href={link}>
   <img src={billede} alt="">
   <h2>{navn}</h2>
   <p class="text">{category}</p>
-  <a href={link}>Read More!</a>
+</a>
   
   
   <!-- <p class="text">{beskrivelse}</p>
@@ -23,16 +24,7 @@ const { navn,billede,data,link, category,categorier, beskrivelse, pris, specifik
 <!-- <a class="selectProgram" href={link}><span>Read More</span> </a> -->
 
 <style>
-  section {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    border: solid;
-  }
-
-  .wrapper {
-    border: solid;
-    width: 5rem;
-  }
+ 
 
   img{
     width: 50%;
@@ -40,5 +32,22 @@ const { navn,billede,data,link, category,categorier, beskrivelse, pris, specifik
 
   video{
     width: 50%;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+
+  @media screen and (max-width: 750px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    
+  }
   }
 </style>
