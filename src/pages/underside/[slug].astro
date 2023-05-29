@@ -4,6 +4,7 @@ import Button from "../../components/Button.astro";
 import Frontpage from "../../components/Frontpage.astro";
 import Footer from "../../components/Footer.astro";
 import Nav from "../../components/Nav.astro";
+import Accordion from "../../components/Accordion.astro";
 export async function getStaticPaths() {
     const URL = "https://ekdwifpkwxudrklhraxd.supabase.co/rest/v1/Produkter";
 
@@ -28,7 +29,11 @@ const {produkt} = Astro.props;
 
 ---
 
-<Nav/>
+<div class="logo">
+  <a href="/"><h1>chi<span>o</span>niso</h1></a>
+</div>
+
+
 
 <section class="slugGrid">
   <div class="textLeft">
@@ -36,11 +41,20 @@ const {produkt} = Astro.props;
     
   </div>
   <div class="rightSide">
-    <h1>{produkt.navn}</h1>
+    <h1>{produkt.navn} </h1>
     <h2>{produkt.pris} kr</h2>
-    <h3>{produkt.beskrivelse}</h3>
-    <Button/> 
+    <p>{produkt.beskrivelse}</p>
+    <Button/>
+    <div class="dropDown">
+      
+      <a href=""><i class="fa-solid fa-plus"></i> Specification</a>
+      <a href=""><i class="fa-solid fa-plus"></i> Dimensions</a>
+      <a href=""><i class="fa-solid fa-plus"></i> Delivery & Returns</a>
+      <a href=""><i class="fa-solid fa-plus"></i> Sustainability</a>
+    </div> 
   </div>
+
+  
   
 </section>
 
@@ -52,6 +66,7 @@ const {produkt} = Astro.props;
 
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&display=swap");
     .slugGrid{
         display: flex;
         justify-content: center;
@@ -59,11 +74,28 @@ const {produkt} = Astro.props;
         
     }
 
+   
+
+    
     .textLeft{
         border: solid;
         display: flex;
         justify-content: right;
         width: 40rem;
+    }
+
+    .dropDown{
+      display: flex;
+      flex-direction: column;
+      font-size: 2rem;
+      margin-top: 2rem;
+      
+      gap: 1.5rem;
+    }
+
+    .dropDown a {
+      text-decoration: none;
+      color: black;
     }
 
     img {
@@ -75,4 +107,29 @@ const {produkt} = Astro.props;
     .rightSide{
         width: 20%;
     }
+
+
+    .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo h1 {
+    margin-left: 0.5rem;
+    font-size: 4rem;
+    font-family: "M PLUS 1 Code", sans-serif;
+    text-decoration: none;
+  }
+
+  span {
+    color: orange;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  html {
+    font-family: "M PLUS 1 Code", sans-serif;
+    overflow-x: hidden;
+  }
 </style>

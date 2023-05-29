@@ -39,7 +39,15 @@ const armbånd = data.filter((produkt) => produkt.category == "Armbånd");
     <Categories categoryTxt="Halskæde" data={halskæder} />
 
     <div class="container">
-      {data.map((produkt) => <Produktkort data={halskæder} categoryTxt="Halskæde" navn={produkt.navn} category={produkt.category} beskrivelse={produkt.beskrivelse} link={"/underside/" + produkt.slug} specifikation={produkt.specifikation} pris={produkt.pris} billede={`/billeder/${produkt.billede}`} />)}
+      {data.map((produkt) => <Produktkort data={halskæder}
+       categoryTxt="Halskæde" 
+       navn={produkt.navn}
+       category={produkt.category} 
+       beskrivelse={produkt.beskrivelse} 
+       link={"/underside/" + produkt.slug} 
+       specifikation={produkt.specifikation} 
+       pris={produkt.pris} 
+       billede={`/billeder/${produkt.billede}`} />)}
     </div>
     <Dots />
 
