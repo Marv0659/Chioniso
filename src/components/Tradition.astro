@@ -10,18 +10,23 @@
 </section>
 
 <style>
+  
   @import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&display=swap");
 
+  @import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Ubuntu:wght@300&display=swap');
+  @font-face {
+    font-family: myFirstFont;
+    src: url("/Fonts/RoxboroughCF.ttf");
+}
+
+
+  
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  html {
-    font-family: "M PLUS 1 Code", sans-serif;
-    overflow-x: hidden;
-  }
 
   .container {
     display: grid;
@@ -48,17 +53,21 @@
     color: var(--secondary-color);
   }
   .about h2 {
-    font-family: "M PLUS 1 Code", sans-serif;
+    font-family: "myFirstFont", sans-serif;
     text-align: center;
   }
   .about p {
+    font-family: 'Eagle Lake', cursive;
+  font-family: 'Ubuntu', sans-serif;
     line-height: 150%;
     font-size: 1.2rem;
   }
   .about img {
+    
     width: 100%;
   }
   a {
+    font-family: "myFirstFont", sans-serif;
     text-decoration: none;
     color: black;
   }

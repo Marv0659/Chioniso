@@ -17,6 +17,11 @@ const {categoryTxt} = Astro.props;
 
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Ubuntu:wght@300&display=swap');
+  @font-face {
+    font-family: myFirstFont;
+    src: url("/Fonts/RoxboroughCF.ttf");
+}
     .halskæder{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -27,11 +32,14 @@ const {categoryTxt} = Astro.props;
       text-align: center;
     }
     a{
+      font-family: 'Eagle Lake', cursive;
+  font-family: 'Ubuntu', sans-serif;
       text-decoration: none;
       color: black;
     }
 
     h1{
+      font-family: myFirstFont;
       font-size: 2rem;
     }
 

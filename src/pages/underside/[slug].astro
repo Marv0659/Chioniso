@@ -66,7 +66,12 @@ const {produkt} = Astro.props;
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&display=swap");
-    .slugGrid{
+  @import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Ubuntu:wght@300&display=swap');
+  @font-face {
+    font-family: myFirstFont;
+    src: url("/Fonts/RoxboroughCF.ttf");
+}
+      .slugGrid{
         display: flex;
         justify-content: center;
         gap: 3rem;
@@ -106,6 +111,15 @@ const {produkt} = Astro.props;
     .rightSide{
         width: 20%;
     }
+    p{
+      font-family: 'Eagle Lake', cursive;
+  font-family: 'Ubuntu', sans-serif;
+
+    }
+
+    h1{
+      font-family: myFirstFont;
+    }
 
 
     .logo {
@@ -115,7 +129,7 @@ const {produkt} = Astro.props;
   .logo h1 {
     margin-left: 0.5rem;
     font-size: 4rem;
-    font-family: "M PLUS 1 Code", sans-serif;
+    font-family: "myFirstFont", sans-serif;
     text-decoration: none;
   }
 
@@ -124,11 +138,9 @@ const {produkt} = Astro.props;
   }
 
   a {
+    font-family: "myFirstFont", sans-serif;
     text-decoration: none;
     color: black;
   }
-  html {
-    font-family: "M PLUS 1 Code", sans-serif;
-    overflow-x: hidden;
-  }
+  
 </style>
