@@ -6,9 +6,11 @@
     <br /><br /><br /><br />
     <a href="#"><h3>Our story <i class="fa-solid fa-arrow-right"></i></h3></a>
   </div>
+  <div class="vidContainer">
   <video autoplay muted loop class="video">
     <source src="/imgs/video2.mp4" type="video/mp4" />
   </video>
+</div>
 </section>
 
 <style>
@@ -37,6 +39,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+  .our-story{
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
   }
 
   .picSpan {
@@ -72,11 +82,10 @@
     font-size: 1.2rem;
   }
   .video {
-    width: 50%;
+    width: 100%;
     display: inline;
     margin: auto;
     padding-top: 3rem;
-    padding-right: 5rem;
     flex: 1;
   }
   a {
@@ -88,15 +97,22 @@
   .about{
     display: flex;
     flex-direction: column;
+    justify-content: sp;
+  }
+
+  .vidContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
   }
   
 }
   @media screen and (min-width: 768px) {
-
-
-    
     body {
       padding: 0% 10%;
+    }
 
       .about {
         display: flex;
@@ -111,9 +127,7 @@
       }
       
     }
-    
-    
-  }
+
 
 
   
